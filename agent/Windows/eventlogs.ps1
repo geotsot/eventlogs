@@ -14,13 +14,13 @@
 List of log names:
     "Application" | "HardwareEvents" | "Internet Explorer" | "Key Management Service" | "Security" | "System" | "Windows Powershell"
 #>
-$logName = @("System"); # The syntax for this value is: "logName" or "FirstLogName", "SecondLogName"
+$LogNames = @("System"); # The syntax for this value is: "logName" or "FirstLogName", "SecondLogName"
 
 <#
 List of entry type:
     "Information" | "Warning" | "Error" | "SuccessAudit" (Security log name) | "FailureAudit" (Security log name)
 #>
-$entryType = @("Warning", "Error"); # The syntax for this value is: "entryType" or "FirstEntryType", "SecondEntryType"
+$EntryTypes = @("Warning", "Error"); # The syntax for this value is: "entryType" or "FirstEntryType", "SecondEntryType"
 
 # Enter a number (days)
 $date = "7";
@@ -30,9 +30,9 @@ $date = "7";
 
 $xml = ""
 
-foreach($LogName in $logName) {
+foreach($LogName in $LogNames) {
     
-    foreach($EntryType in $entryType) {
+    foreach($EntryType in $EntryTypes) {
 
         $Logs = Get-EventLog $LogName -EntryType $EntryType -erroraction 'silentlycontinue' -After (Get-Date).AddDays(-$date) # retrieve of logs
 
