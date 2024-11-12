@@ -46,8 +46,8 @@ foreach($LogName in $LogNames) {
                 $xml += "<EVENT_ID>" + $Log.EventID + "</EVENT_ID>`n"
                 $xml += "<MACHINE_NAME>" + $Log.MachineName + "</MACHINE_NAME>`n"
                 $xml += "<SOURCE>" + $Log.Source + "</SOURCE>`n"
-                $xml += "<TIME_GENERATED>" + ($Log.TimeGenerated).ToString("yyyy-MM-dd hh:mm:ss") + "</TIME_GENERATED>`n"
-                $xml += "<TIME_WRITTEN>" + ($Log.TimeWritten).ToString("yyyy-MM-dd hh:mm:ss") + "</TIME_WRITTEN>`n"
+                $xml += "<TIME_GENERATED>" + ($Log.TimeGenerated).ToString("yyyy-MM-dd HH:mm:ss") + "</TIME_GENERATED>`n"
+                $xml += "<TIME_WRITTEN>" + ($Log.TimeWritten).ToString("yyyy-MM-dd HH:mm:ss") + "</TIME_WRITTEN>`n"
                 $xml += "<MESSAGE>" + $Msg + "</MESSAGE>`n"
                 $xml += "</EVENTLOGS>`n"
             }
